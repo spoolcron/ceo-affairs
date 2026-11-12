@@ -674,13 +674,15 @@ function buildMethod() {
       "of the last session before the story became public. Day 0 is the first session the market could have traded " +
       "on the news: where a story landed after the close or at a weekend, day 0 is the next session, and that is " +
       "recorded per case in events.json.",
-    "The benchmark is a US large-cap index traded fund, the SPY fund here, indexed off its own close before the " +
-      "same session; the exact benchmark and the feed behind every line are named below. \u201cVs the market\u201d " +
-      "subtracts one from the other in percent points. Note what that does and does not remove: neither feed " +
-      "returns total returns here, so dividends stay out of both sides and largely cancel, but a stock's own " +
-      "sector still rides inside its line \u2014 subtracting a broad index does not correct for an AI or semiconductor " +
-      "selloff. Non-US listings are compared with a US index, which charges them for whatever their own market and " +
-      "currency did.",
+    "The benchmark is a broad US market line, indexed off its own close before the same session; the exact " +
+      "benchmark and the feed behind every line are named below, so you can see what was actually subtracted. " +
+      "\u201cVs the market\u201d takes the stock's percent change minus the index's, in percent points. Two limits are " +
+      "worth stating plainly. Dividends: the Nasdaq feed used in this build carries no dividend adjustment on " +
+      "either side, so they largely cancel, but a Yahoo-sourced stock line against a Nasdaq index would not " +
+      "cancel cleanly \u2014 the feeds are named per ticker for exactly that reason. Sector: subtracting a broad " +
+      "index does not remove a semiconductor or AI selloff, which still rides inside the stock's own line, so the " +
+      "market view over-corrects for anything the whole sector was doing. Non-US listings are compared with a US " +
+      "index, which charges them for whatever their own market and currency did.",
     "\u201cCEO infidelity\u201d here means the chief executive of a listed company whose extramarital relationship became " +
       "public. Episodes that were principally about assault, harassment or money paid to keep someone quiet are " +
       "labelled as such rather than folded into the same count, because the market priced them differently; some " +
