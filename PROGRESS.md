@@ -4,6 +4,10 @@ Goal: a GitHub Pages site, in the style of spoolcron.github.io/ai-crash, plottin
 a listed company's share price after its CEO's infidelity became public, headed by
 the Nvidia / Jensen Huang story against the verified precedents.
 
+**PUBLISHED**: https://spoolcron.github.io/ceo-affairs/ (repo `spoolcron/ceo-affairs`,
+Pages from `main`, verified rendering live with zero console errors).
+Refresh with `python3 fetch_data.py && ./deploy.sh`; see README.md.
+
 ## Done
 
 - Reference site read: hand-rolled SVG, `window.CRASH` data module, presets +
@@ -56,8 +60,29 @@ contradicted:
 
 ## Next
 
-1. Act on the two reviewer subagents' findings, then commit and publish
-   `spoolcron/ceo-affairs` + Pages.
+Done. Two reviewer subagents found 20 defects; the material ones fixed:
+
+- **P0**: trimming the "dead" colour palette had orphaned `var(--c-nvda)`, and
+  because a CSS rule outranks the `stroke` attribute, the headline Nvidia line was
+  invisible. Colours now come only from the attribute; verified amber on the live
+  site.
+- Percent-point gaps read as "%" (HP's "-22.3%" was really 22.3pt vs the index) —
+  now `pt` in axis, table, chips, tooltip and prose.
+- Live prints leaked into "settled" headlines: lead, KPIs and findings now use
+  settled-only statistics, with a dagger for a line whose only point is today.
+- Tooltip stamped one case's date on every row; dates are now per row, names use
+  the disambiguating short label, and the box is clamped inside the viewport.
+- `captions()` crashed the whole page on a single-date dataset, and a case whose
+  only session is live crashed `fmtDM(null)` — both reproduced and fixed.
+- `_covers` accepted a benchmark 12 days short and froze the excess tail; end
+  slack tightened and forward-fill capped at 5 days.
+- Split gate lowered from -40 to -25 points (a 3-for-2 split is -33 and was
+  passing through), feed claims corrected after proving the Nasdaq series *is*
+  back-adjusted, malformed feed responses isolated per ticker.
+- Radio groups now behave like radio groups (one tab stop, arrow keys); the chart
+  is keyboard-readable; chips follow the selected measure.
+- "HP fell 17 cents" and "the S&P 500 fell 1.2%" corrected to what the data
+  supports; index naming made consistent with the SPY benchmark actually used.
 
 ## Done since last update
 
