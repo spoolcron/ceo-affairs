@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The CEO affair premium · What happens to a share price when an affair becomes public</title>
+<meta name="description" content="Nvidia's Jensen Huang admitted an affair on 8 November 2026 and was out of a job within four days. His shares are charted here against every other documented case of a listed company's chief executive being caught out, indexed day by day from the session that first traded on the story, and again against the market.">
+<meta name="theme-color" content="#0d1117">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230d1117'/%3E%3Cpath d='M5 22 L12 14 L17 18 L27 7' fill='none' stroke='%23ffd166' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M20 7h7v7' fill='none' stroke='%23ff7a6b' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css?v=1">
+</head>
+<body>
+<header class="masthead">
+  <div>
+    <p class="kicker" id="asOf"></p>
+    <h1>The CEO affair premium</h1>
+    <p class="sub" id="lead"></p>
+  </div>
+  <dl class="kpis" id="kpis"></dl>
+</header>
+
+<main>
+  <section class="controls" aria-label="Chart controls">
+    <div class="control">
+      <span class="controlLabel">Lines</span>
+      <div class="btnrow" id="presets" role="radiogroup" aria-label="Which cases to draw"></div>
+    </div>
+    <div class="control">
+      <span class="controlLabel">Measure</span>
+      <div class="segmented small" id="measure" role="radiogroup" aria-label="What to plot"></div>
+    </div>
+    <div class="control">
+      <span class="controlLabel">Horizon</span>
+      <div class="segmented small" id="horizon" role="radiogroup" aria-label="Trading days drawn"></div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="panelHead">
+      <h2 id="chartTitle">How the share price moved after the story broke</h2>
+      <p class="hint"><span id="chartBlurb"></span> <span id="chartStamp" class="mono"></span></p>
+    </div>
+    <div class="chips" id="chips"></div>
+    <div class="chartWrap chart" id="chart"></div>
+    <p class="footnote" id="chartFoot"></p>
+  </section>
+
+  <section class="panel">
+    <div class="panelHead">
+      <h2 id="tableTitle">The cases, day by day</h2>
+      <p class="hint">Day counts are trading sessions from the first one that could trade on the
+        news. <span id="tableStamp"></span></p>
+    </div>
+    <div class="tableScroll">
+      <table class="table" id="caseTable">
+        <thead></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <p class="footnote" id="tableFoot"></p>
+  </section>
+
+  <section class="panel">
+    <div class="panelHead">
+      <h2>What the episodes say</h2>
+    </div>
+    <div class="findings" id="findings"></div>
+  </section>
+
+  <section class="panel">
+    <div class="panelHead"><h2>Sources and method</h2></div>
+    <details open>
+      <summary>How each case was dated, and what the numbers are</summary>
+      <div class="src" id="method"></div>
+    </details>
+    <details>
+      <summary>Every source cited, by case</summary>
+      <div class="src" id="sources"></div>
+    </details>
+  </section>
+</main>
+
+<div class="tooltip" id="tooltip" hidden></div>
+<script src="data.js?v=1"></script>
+<script src="app.js?v=1"></script>
+</body>
+</html>
